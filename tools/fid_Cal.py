@@ -14,9 +14,9 @@ os.makedirs(fake_dir, exist_ok=True)
 # Separate the files
 for fname in os.listdir(img_dir):
     if fname.endswith(".png"):
-        if "_real" in fname:
+        if "_X_" in fname:
             shutil.copy(os.path.join(img_dir, fname), os.path.join(real_dir, fname))
-        elif "_fake" in fname:
+        elif "_Y_fake_" in fname:
             shutil.copy(os.path.join(img_dir, fname), os.path.join(fake_dir, fname))
 
 # Compute FID
